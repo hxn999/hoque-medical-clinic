@@ -292,3 +292,100 @@ li:hover{
     font-size: 25px;
     background: transparent;
 }
+.contact{
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px 0;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    background: #7AB2D3;
+}
+.contact-time{
+    display: flex;
+    background: #7AB2D3;
+    flex-direction: column;
+    gap: 35px;
+}
+.contact-address{
+    display: flex;
+    flex-direction: column;
+    background: #7AB2D3;
+    gap: 25px;
+}
+.contact-times{
+    background: #7AB2D3;
+}
+.contact-addresses{
+    background: #7AB2D3;
+}
+.contact-time-title{
+    background: #7AB2D3;
+}
+
+.contact-input-text{
+    background: #add5ec;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+}
+.contact-input-text:active{
+    border: 2px solid black;
+}
+.contact-input-text:hover{
+    border: 2px solid #3f718e;
+}
+.contact-form-title{
+    font-size: 35px;
+    letter-spacing: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4A628A;
+}
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid #4A628A; 
+    padding-left: 10px;
+}
+.contact-textarea{
+    width:93%;
+    font-size: ;
+    border: 2px solid #4A628A; 
+    background: #add5ec;
+    padding: 10px;
+    font-size: 20px;
+    height: 200px;
+    resize: none;
+}
+.contact-btn{
+    padding: 15px 30px;
+
+}
+
+
+footer{
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    background: #4A628A;
+    font-weight: 600;
+    letter-spacing: 20px;
+    font-size: 20px;
+}
