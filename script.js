@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('.sandwich-button');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const button = document.querySelector('.sandwich-button');
     
-    button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        button.setAttribute('aria-expanded', button.classList.contains('active'));
-    });
-});
+//     button.addEventListener('click', () => {
+//         button.classList.toggle('active');
+//         button.setAttribute('aria-expanded', button.classList.contains('active'));
+//     });
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle =  document.querySelector('.sandwich-button');
