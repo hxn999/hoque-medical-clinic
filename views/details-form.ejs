@@ -1,0 +1,74 @@
+<%-include('./components/header.ejs') %>
+    <section class="patient-reg">
+        <h1 class="reg-title mission-title">NEW PATIENT REGISTRATION</h1>
+        <p class="reg-desc mission-desc ">If you are looking to become a new patient, or have had a procedure
+            recommended by your primary care physician, please fill out the following form, and we will be in contact
+            shortly. To fill out this form, you must be on a desktop computer.</p>
+
+            <form action="" class="reg-form">
+                <label class="label">
+                    First Name <span class="red">*</span>
+                    <input type="text" class="contact-input-text" placeholder="First Name" required />
+                </label>
+            
+                <label class="label">
+                    Last Name <span class="red">*</span>
+                    <input type="text" class="contact-input-text" placeholder="Last Name" required />
+                </label>
+            
+                <label class="label-area">
+                    List any surgeries you have had <span class="red">*</span>
+                    <textarea class="contact-textarea  reg-textarea" placeholder="Add surgeries" required></textarea>
+                </label>
+            
+                <label class="label-area">
+                    List medical conditions for which you are currently under treatment (high blood pressure, diabetes, heart disease, asthma, etc.) <span class="red">*</span>
+                    <textarea class="contact-textarea  reg-textarea" placeholder="Add medical conditions" required></textarea>
+                </label>
+            
+                <label class="label-area">
+                    List any allergies you have to medications and the reaction (for example, penicillin—rash) <span class="red">*</span>
+                    <textarea class="contact-textarea reg-textarea" placeholder="Add allergies" required></textarea>
+                </label>
+            
+                <div class="radio-group">
+                    <h3 class="radio-title">Please indicate if you use tobacco, alcohol, or recreational drugs <span class="red">*</span></h3>
+                    <div class="radio radio-wrap">
+                        <label>
+                            <input type="checkbox" class="contact-input-text" /> Alcohol
+                        </label>
+                        <label>
+                            <input type="checkbox" class="contact-input-text" /> Tobacco
+                        </label>
+                        <label>
+                            <input type="checkbox" class="contact-input-text" /> Recreational Drugs
+                        </label>
+                        <label>
+                            <input type="checkbox" class="contact-input-text" /> None
+                        </label>
+                    </div>
+                </div>
+            
+                <label class="label-area">
+                    Please indicate your understanding of why you are having this procedure <span class="red">*</span>
+                    <textarea class="contact-textarea reg-textarea" placeholder="Add reason for procedure" required></textarea>
+                </label>
+            
+                <div class="radio-group">
+                    <h3 class="radio-title">Declaration <span class="red">*</span></h3>
+                    <label>
+                        <input type="checkbox" class="contact-input-text" required />
+                        I declare that the info I've provided is accurate & complete
+                    </label>
+                </div>
+            
+                <button type="submit" class="reg-btn">Submit</button>
+            </form>
+            
+            
+            
+    </section>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

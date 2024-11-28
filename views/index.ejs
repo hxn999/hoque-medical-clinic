@@ -1,0 +1,182 @@
+<%-include('./components/header.ejs') %>
+  <main>
+    <section class="home">
+      <div class="text">
+
+        <h1 class="home-title">Hoque Medical Clinic</h1>
+        <p class="home-desc">Helping to Build a Healthier Community</p>
+        <div class="btn-container">
+          <a href="/book"><button onclick="hide()" class="reg-btn registration">Become a Patient</button></a>
+        </div>
+      </div>
+    </section>
+    <section id="intro" class="intro">
+      <div class="intro-text">
+        <h1 class="intro-title">About Nazmul Hoque MD</h1>
+        <p class="intro-desc">
+          Lorem ipsum dolor, si t amet consectetur adipisicing elit.
+          Praesentium tenetur quod dicta, qui asperiores aspernatur maxime
+          aliquid cum quae deleniti reiciendis facilis amet corporis nihil
+          earum molestias, quis nobis deserunt.
+        </p>
+        <div class="edu">
+          <h1 class="edu-title">Education</h1>
+          <p class="edu-desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            nam nobis commodi, quisquam officiis tenetur quo aliquam similique
+            dicta nisi.
+          </p>
+        </div>
+      </div>
+
+      <img class="doctor" src="assets/pic.jpg" alt="" />
+
+    </section>
+    <section class="mission">
+      <h1 class="mission-title">Our Mission</h1>
+      <p class="mission-desc">
+        Our mission at <span style="font-weight: bold; background: transparent;">Hoque Medical Clinic</span> is to
+        provide the
+        highest quality endoscopic and ophthalmology surgical services to
+        improve the medical care of patients in our area. We provide
+        endoscopic procedures and eye surgeries in a safe, modern environment.
+        Our facility is designed to make your experience as comfortable as
+        possible. We are committed to making these services available to
+        everyone.
+      </p>
+      <div class="mission-btn-container">
+        <button class="reg-btn">Contact Us</button>
+      </div>
+    </section>
+    <section class="cost">
+      <div class="cost-text">
+        <h1 class="cost-title">Quick Costs</h1>
+        <p class="cost-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, cupiditate!</p>
+        <div class="cost-card-container">
+          <div class="cost-card">
+            <img src="assets/colonoscopy.png" alt="" class="cost-card-img">
+            <h3 class="cost-card-title">Colonoscopy</h3>
+            <h2 class="cost-card-price">900$</h2>
+            <button class="cost-card-btn ">
+              More Information
+            </button>
+            <div class="cost-btn-container">
+              <button class="cost-btn reg-btn">
+                Book Procedure
+              </button>
+            </div>
+          </div>
+          <div class="cost-card">
+            <img src="assets/endoscopy.png" alt="" class="cost-card-img">
+            <h3 class="cost-card-title">ENDOSCOPY</h3>
+            <h2 class="cost-card-price">500$</h2>
+            <button class="cost-card-btn ">
+              More Information
+            </button>
+            <div class="cost-btn-container">
+              <button class="cost-btn reg-btn">
+                Book Procedure
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <section class="insure">
+      <h1 class="mission-title">Insuarance Coverage</h1>
+      <h3 class="insure-title2">Nearly all major insurance plans acceptedNearly all major insurance plans accepted</h3>
+      <p class="mission-desc">
+        Our mission at <span style="font-weight: bold; background: transparent;">Hoque Medical Clinic</span> is to
+        provide the
+        highest quality endoscopic and ophthalmology surgical services to
+        improve the medical care of patients in our area. We provide
+        endoscopic procedures aaking these services available to
+        everyone.
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis non provident, saepe tenetur qui illo, facere,
+        assumenda eius atque modi neque. Explicabo similique fugit facilis asperiores vero alias minima dolorum.
+      </p>
+      <div class="mission-btn-container">
+        <button class="reg-btn">Contact Us</button>
+      </div>
+    </section>
+    <section class="contact">
+      <form id="contact" action="/" method="post"  class="contact-form">
+        <h1 class="contact-form-title">CONTACT</h1>
+        <label class="label">
+          Name
+          <input name="name" type="text" class="contact-input-text" placeholder="Name" required/>
+        </label>
+        <label class="label">
+          Email
+          <input name="email" type="text" class=" contact-input-text" placeholder="Email" required/>
+        </label>
+        <label class="label">
+          Phone
+          <input name="phone" type="text" class=" contact-input-text" placeholder="Phone" required/>
+        </label>
+        <textarea name="bio" class="contact-textarea" placeholder="Bio" required ></textarea>
+        <button class="contact-btn reg-btn">Submit</button>
+        <p class="error"><%= error %></p>
+        <p class="succ"><%= msg %></p>
+      </form>
+      <div  class="contact-text">
+        <div class="contact-time">
+          <h1 class="contact-time-title">
+            HOURS OF OPERATION
+          </h1>
+          <h4 class="contact-times">
+            Monday-Friday: 8am to 5pm
+          </h4>
+          <h4 class="contact-times">
+            Saturday & Sunday: Closed
+          </h4>
+        </div>
+        <hr>
+        <div class="contact-address">
+          <h4 class="contact-addresses">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h4>
+          <h4 class="contact-addresses">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h4>
+          <h4 class="contact-addresses">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h4>
+          <h4 class="contact-addresses">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h4>
+        </div>
+      </div>
+    </section>
+    <section class="map">
+      <h1 class="insure-title map-title">Map Location</h1>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1193851782978!2d90.35273127479392!3d23.81435338631915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c107a622c66b%3A0x845dff81d6bc83dc!2sRupnagar%20Abashik!5e0!3m2!1sen!2sus!4v1732732159195!5m2!1sen!2sus"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+  <footer>
+    © HOQUE MEDICAL CENTER
+  </footer>
+  <script>
+    const msg = "<%= msg %>"
+    const error = "<%= error %>"
+    const contactForm = document.querySelector("#contact")
+    const contactFormTop = contactForm.offsetTop
+    if(msg||error)
+  {
+    window.scrollTo({
+      top:contactFormTop
+    })
+  }
+  </script>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>

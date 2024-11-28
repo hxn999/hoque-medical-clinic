@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        header {
+            align-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 2px solid #4A628A;
+        }
+
+        a {
+            padding: 4px 20px;
+            border: 2px solid #4A628A;
+            border-radius: 20px;
+        }
+
+        .admin-contact {
+            padding-top: 10px;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 10px 30px;
+        }
+        .contact-card-container{
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .contact-card{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: start;
+            border: 2px solid #4A628A;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="" class="logo-img">
+
+            <div class="logo-text">
+
+                <h1 class="logo-head">Hoque Medical clinic | <span>Admin Panel</span></h1>
+                <span class="logo-desc"></span>
+            </div>
+        </div>
+        <a href="/"> Visit Website</a>
+    </header>
+
+    <main>
+        <section class="admin-contact">
+            <h1 class="admin-contact">Contact Messages</h1>
+            <div class="contact-card-container">
+                <div class="contact-card">
+                    <p class="contact-card-data"><span style="font-weight: bold;">Name :</span> Hasibul Hasan</p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Email :</span> Hasan@com</p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Phone :</span> 0171902</p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Bio :</span> Lorem ipsum dolor sit
+                        amet consectetur adipisicing elit. Dolorem reprehenderit possimus dolor officiis tempore. Ex
+                        molestiae explicabo quam quisquam aperiam. Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Qui, hic.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

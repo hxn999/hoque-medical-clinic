@@ -1,0 +1,103 @@
+<%-include('./components/header.ejs') %>
+
+    <section class="patient-reg">
+        <h1 class=" mission-title reg-title">NEW PATIENT REGISTRATION</h1>
+        <p class="reg-desc mission-desc ">If you are looking to become a new patient, or have had a procedure
+            recommended by your primary care physician, please fill out the following form, and we will be in contact
+            shortly. To fill out this form, you must be on a desktop computer.</p>
+
+            <form action="" class="reg-form">
+                <h1>List of Medications</h1>
+                <p>
+                    To facilitate your visit, please provide the following information:
+                    If you have a written list, you can bring it to your visit. Write "See attached" in the space for Drug 1.
+                </p>
+                
+                <label class="label">
+                    First Name <span class="red">*</span>
+                    <input type="text" class="contact-input-text" placeholder="First Name" name="first_name" required />
+                </label>
+            
+                <label class="label">
+                    Last Name <span class="red">*</span>
+                    <input type="text" class="contact-input-text" placeholder="Last Name" name="last_name" required />
+                </label>
+            
+                <label class="label">
+                    Drug 1
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_1" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_1" />
+                </label>
+            
+                <label class="label">
+                    Drug 2
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_2" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_2" />
+                </label>
+            
+                <label class="label">
+                    Drug 3
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_3" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_3" />
+                </label>
+            
+                <label class="label">
+                    Drug 4
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_4" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_4" />
+                </label>
+            
+                <label class="label">
+                    Drug 5
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_5" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_5" />
+                </label>
+            
+                <label class="label">
+                    Drug 6
+                    <input type="text" class="contact-input-text" placeholder="Add drug name" name="drug_6" />
+                </label>
+            
+                <label class="label">
+                    Dose (mg) & Times Per Day
+                    <input type="text" class="contact-input-text" placeholder="Add dosage information" name="dose_6" />
+                </label>
+            
+                <div class="radio-group">
+                    <label class="label">
+                        <input type="checkbox" class="contact-input-text" name="declaration" required />
+                        I declare that the info I've provided is accurate & complete
+                    </label>
+                </div>
+            
+                <button type="submit" class="reg-btn">Submit</button>
+            </form>
+            
+            
+            
+            
+    </section>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
