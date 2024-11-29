@@ -66,15 +66,15 @@
         <section class="admin-contact">
             <h1 class="admin-contact">Contact Messages</h1>
             <div class="contact-card-container">
+
+                <% messages.forEach(msg => { %>
                 <div class="contact-card">
-                    <p class="contact-card-data"><span style="font-weight: bold;">Name :</span> Hasibul Hasan</p>
-                    <p class="contact-card-data"><span style="font-weight: bold;">Email :</span> Hasan@com</p>
-                    <p class="contact-card-data"><span style="font-weight: bold;">Phone :</span> 0171902</p>
-                    <p class="contact-card-data"><span style="font-weight: bold;">Bio :</span> Lorem ipsum dolor sit
-                        amet consectetur adipisicing elit. Dolorem reprehenderit possimus dolor officiis tempore. Ex
-                        molestiae explicabo quam quisquam aperiam. Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Qui, hic.</p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Name :</span> <%= msg.name %></p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Email :</span> <%= msg.email %></p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Phone :</span> <%= msg.phone %></p>
+                    <p class="contact-card-data"><span style="font-weight: bold;">Bio :</span> <%= msg.bio %></p>
                 </div>
+                <% }) %>
             </div>
         </section>
 

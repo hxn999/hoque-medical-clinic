@@ -1,11 +1,14 @@
 <%-include('./components/header.ejs') %>
     <section class="patient-reg">
-        <h1 class="reg-title mission-title">NEW PATIENT REGISTRATION</h1>
+        <h1 onclick="" class="reg-title mission-title">NEW PATIENT REGISTRATION</h1>
         <p class="reg-desc mission-desc ">If you are looking to become a new patient, or have had a procedure
             recommended by your primary care physician, please fill out the following form, and we will be in contact
             shortly. To fill out this form, you must be on a desktop computer.</p>
 
-            <form action="" class="reg-form">
+            <div id="toast" class="toast">
+                This is a toast notification!
+            </div>
+            <form action="/book" method="post" class="reg-form">
                 <!-- First Name -->
                 <label class="label">
                     First Name <span class="red">*</span>
@@ -245,11 +248,17 @@
                 </div>
             
                 <!-- Submit Button -->
-                <button type="submit" class="reg-btn">Submit</button>
+                <button id="reg-btn" type="submit" class="reg-btn">Submit</button>
             </form>
             
     </section>
     <script src="./script/script.js"></script>
+
+    <script>
+        
+    </script>
+
+
 </body>
 
 </html>

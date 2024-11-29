@@ -294,6 +294,17 @@ li:hover{
 .cost-btn-container{
     background: transparent;
 }
+.toast {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: top 0.5s ease;
+}
 .cost-card-btn{
     padding: 15px 35px;
     font-size: 16px;
@@ -376,7 +387,9 @@ li:hover{
     background: #add5ec;
     color: black;
     padding: 10px;
-   
+    /* width: max-content; */
+    /* flex: 1; */
+    width: 80%;
     font-size: 20px;
     border: none;
 }
@@ -397,9 +410,10 @@ li:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    /* flex-wrap: wrap; */
     border: 2px solid #4A628A; 
     padding-left: 10px;
+    font-size: 13px;
 }
 .contact-textarea{
     width:93%;
@@ -667,7 +681,9 @@ h1{
         text-align: center;
         font-size: 25px;
     }
-    .
+    .label{
+        font-size: 10px;
+    }
 }
 
 a{
@@ -809,7 +825,7 @@ a{
         flex-wrap: ;
     }
     .contact-input-text{
-        width: 70%;
+        /* width: 70%; */
         font-size: 16px;
         height: 100%;
     }
@@ -818,7 +834,7 @@ a{
         letter-spacing: 7px;
     }
     .contact-input-text{
-        width: 70%;
+        /* width: 70%; */
     }
     
 }

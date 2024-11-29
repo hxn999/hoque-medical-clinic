@@ -1,3 +1,4 @@
+const toast = document.getElementById("toast");
 // document.addEventListener('DOMContentLoaded', () => {
 //     const button = document.querySelector('.sandwich-button');
     
@@ -31,3 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+function showToast() {
+    toast.style.top = "20px";
+    setTimeout(() => {
+        toast.style.top = "-50px";
+    }, 3000);
+}

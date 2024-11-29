@@ -17,7 +17,7 @@ export async function contactForm(req, res) {
             msg:"Your Form was submitted successfully!",
             error:""
         })
-        res.redirect("#contact")
+        
     } catch (error) {
         res.render("index",{
             msg:"",
