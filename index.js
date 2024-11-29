@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
-import path from 'node:path';
+import path from 'node:path'
 import cors from 'cors'
 import { fileURLToPath } from 'node:url';
 
