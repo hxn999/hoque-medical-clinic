@@ -1,0 +1,122 @@
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.sandwich-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    justify-content: space-around;
+    padding: 0;
+    z-index: 100;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+    transform-origin: left;
+}
+
+.sandwich-button.active .line-1 {
+    transform: rotate(45deg);
+    /* transform: translateX(5px); */
+}
+
+.sandwich-button.active .line-2 {
+    opacity: 0;
+}
+
+.sandwich-button.active .line-3 {
+    transform: rotate(-45deg);
+}
+
+.sandwich-button:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); */
+}
+#menuSlider {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 250px;
+    height: 100%;
+    /* background-color: #f1f1f1; */
+    transition: right 0.3s ease;
+    z-index: 50;
+}
+
+#menuSlider.active {
+    right: 0;
+}
+
+#menuSlider ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 100px;
+}
+
+#menuSlider ul li {
+    padding: 10px 40px;
+    font-size: 24px;
+}
+
+#menuSlider ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.slider-menu{
+    flex-direction: column;
+    
+}
+
+.hero{
+    background: url("../assets/clinic.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    object-fit: contain;
+    background-size: cover;
+    height: calc(100vh - 88px);
+    /* height: 100vh; */
+
+}
+
+#hero-title{
+    -webkit-text-stroke: 0.01px rgb(25, 74, 146);
+}
+
+
+.hidden-l {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(20%);
+    transition: all 0.7s;
+    display: none;
+}   
+.hidden-r {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(20%);
+    transition: all 0.7s;
+    display: none;
+}   
+.show{
+    display: block;
+    z-index: 15;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    }

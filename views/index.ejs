@@ -1,182 +1,223 @@
-<%-include('./components/header.ejs') %>
-  <main>
-    <section class="home">
-      <div class="text">
+<!DOCTYPE html>
+<html lang="en">
 
-        <h1 class="home-title">Hoque Medical Clinic</h1>
-        <p class="home-desc">Helping to Build a Healthier Community</p>
-        <div class="btn-container">
-          <a href="/book"><button onclick="hide()" class="reg-btn registration">Become a Patient</button></a>
-        </div>
-      </div>
-    </section>
-    <section id="intro" class="intro">
-      <div class="intro-text">
-        <h1 class="intro-title">About Nazmul Hoque MD</h1>
-        <p class="intro-desc">
-          Lorem ipsum dolor, si t amet consectetur adipisicing elit.
-          Praesentium tenetur quod dicta, qui asperiores aspernatur maxime
-          aliquid cum quae deleniti reiciendis facilis amet corporis nihil
-          earum molestias, quis nobis deserunt.
-        </p>
-        <div class="edu">
-          <h1 class="edu-title">Education</h1>
-          <p class="edu-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            nam nobis commodi, quisquam officiis tenetur quo aliquam similique
-            dicta nisi.
-          </p>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+    </style>
+    <link href="css/anim.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <style>
+        /* *{
+            overflow-x: hidden;
+        } */
+    </style>
+    <title>Document</title>
+</head>
 
-      <img class="doctor" src="assets/pic.jpg" alt="" />
+<body class="bg-primary font-classic">
 
-    </section>
-    <section class="mission">
-      <h1 class="mission-title">Our Mission</h1>
-      <p class="mission-desc">
-        Our mission at <span style="font-weight: bold; background: transparent;">Hoque Medical Clinic</span> is to
-        provide the
-        highest quality endoscopic and ophthalmology surgical services to
-        improve the medical care of patients in our area. We provide
-        endoscopic procedures and eye surgeries in a safe, modern environment.
-        Our facility is designed to make your experience as comfortable as
-        possible. We are committed to making these services available to
-        everyone.
-      </p>
-      <div class="mission-btn-container">
-        <button class="reg-btn">Contact Us</button>
-      </div>
-    </section>
-    <section class="cost">
-      <div class="cost-text">
-        <h1 class="cost-title">Quick Costs</h1>
-        <p class="cost-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, cupiditate!</p>
-        <div class="cost-card-container">
-          <div class="cost-card">
-            <img src="assets/colonoscopy.png" alt="" class="cost-card-img">
-            <h3 class="cost-card-title">Colonoscopy</h3>
-            <h2 class="cost-card-price">900$</h2>
-            <button class="cost-card-btn ">
-              More Information
-            </button>
-            <div class="cost-btn-container">
-              <button class="cost-btn reg-btn">
-                Book Procedure
-              </button>
+    <header class="sticky top-0 py-4 z-20 bg-primary ">
+        <!-- ---------------- navbar ------------------------- -->
+
+        <nav class="max-w-[1380px] m-auto px-8  flex items-center  justify-between sticky top-0">
+            <div class="flex items-center justify-center gap-2">
+                <img src="assets/logo.png" alt="" class="w-14">
+                <div class="flex flex-col items-start justify-center">
+                    <h1 class="font-black text-3xl ">Hoque</h1>
+                    <span class="text-sm text-slate-600">Medical Clinic</span>
+                </div>
             </div>
-          </div>
-          <div class="cost-card">
-            <img src="assets/endoscopy.png" alt="" class="cost-card-img">
-            <h3 class="cost-card-title">ENDOSCOPY</h3>
-            <h2 class="cost-card-price">500$</h2>
-            <button class="cost-card-btn ">
-              More Information
+
+            <ul class="flex items-center justify-between gap-10 text-xl max-[1024px]:hidden">
+                <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Our Mission</li>
+                <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Insuarance</li>
+                <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Procedure</li>
+                <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Pre-Op</li>
+                <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Contact</li>
+            </ul>
+            <button class="sandwich-button lg:hidden" aria-label="Toggle menu">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
             </button>
-            <div class="cost-btn-container">
-              <button class="cost-btn reg-btn">
-                Book Procedure
-              </button>
+
+
+            <!-- ----------------- mobile slider-------------------- -->
+            <nav id="menuSlider" class=" bg-secondary p-l-10" aria-hidden="true">
+                <ul class="slider-menu mt-20">
+                    <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Our Mission
+                    </li>
+                    <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Insuarance
+                    </li>
+                    <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Procedure
+                    </li>
+                    <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Pre-Op</li>
+                    <li class="hover:cursor-pointer hover:text-accent hover:-translate-y-1 transition-all ">Contact</li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <main class="sticky top-[88px] mb-40">
+
+        <!-- ------------------ scroll navigator -------------------------  -->
+
+        <div class="w-10 absolute top-[65vh] left-48 z-20 flex flex-col items-center justify-center hover:cursor-pointer  md:hidden">
+            <svg class="w-10 h-10 animate-bounce" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
+                height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_"
+                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+            </svg>
+            <svg class="w-10 h-10 animate-bounce delay-1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
+                height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_"
+                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+            </svg>
+            Scroll Down
+        </div>
+
+        <!-- ----------------- hero -------------------------------- -->
+        <section class="hero max-[800px]:bg-left w-full sticky top-[88px]   -z-10  mb-36   ">
+            <div
+                class="sect   my-0  text-blue-500 py-5 h-full flex flex-col items-center sticky top-[88px] justify-center gap-20 -z-10 max-[800px]:justify-start max-[800px]:pt-44 ">
+                <div class="flex flex-col justify-center items-center gap-6">
+                    <h1 id="hero-title" class="text-7xl font-black tracking-widest max-[800px]:text-4xl text-center">
+                        Nazmul Hoque MD
+                    </h1>
+                    <p class="text-slate-600 text-xl"> Your Health, Our Priority </p>
+                </div>
+                <div class="rounded-md"><button class="bg-accent text-white py-2 px-6 text-lg rounded-md">See
+                        Procedures</button></div>
             </div>
-          </div>
+        </section>
+
+        <div id="animation" class="mt-20">
+
+            <!-- --------------------- about ------------------------  -->
+
+            <section
+                class="sect  flex justify-between items-center gap-40 max-[900px]:flex-col-reverse max-[900px]:gap-16">
+                <div class="flex flex-col gap-20 max-[900px]:gap-10 justify-between">
+                    <div id="first" class="flex flex-col hidden-l  gap-5">
+                        <h1 class="text-4xl font-black max-[900px]:text-2xl">
+                            About Nazmul Hoque MD
+                        </h1>
+                        <p class="text-lg max-[900px]:text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dicta sunt expedita
+                            repellendus
+                            consectetur, labore magni soluta nesciunt quia quae eius illo quam illum quos alias ipsam,
+                            unde,
+                            nulla id error quis tempore facere! Earum repellendus a magni. Odio, quidem.
+                        </p>
+                    </div>
+                    <div class="flex flex-col hidden-l gap-5">
+                        <h1 class="text-4xl font-black max-[900px]:text-2xl">
+                            Education
+                        </h1>
+                        <p class="text-lg max-[900px]:text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dicta sunt expedita
+                            repellendus
+                            consectetur, labore magni soluta nesciunt quia quae eius illo quam illum quos alias ipsam,
+                            unde,
+                            nulla id error quis tempore facere! Earum repellendus a magni. Odio, quidem.
+                        </p>
+                    </div>
+                </div>
+
+                <img src="assets/pic.jpg" class="w-2/6 rounded-md max-[900px]:w-4/5" alt="">
+            </section>
+
+
+
+            <!-- ------------------------------ mission ---------------------------------------- -->
+            <section class="sect  flex justify-center flex-col my-40  hidden-r  items-center gap-10 max-[900px]:gap-16">
+
+                <h1 class="text-5xl max-[800px]:text-3xl border-b-2   border-secondary">Our Mission</h1>
+                <p class="text-lg max-[800px]:text-base text-center  w-4/5">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum at, sint iusto quae non quis
+                    laboriosam cum eum dolorem voluptate voluptates autem, deserunt enim numquam amet rerum suscipit,
+                    maxime
+                    magni! Aliquid, neque. Ipsum, vitae. Obcaecati commodi alias illo, nam assumenda amet sint?
+                    Dignissimos,
+                    sint a modi facere provident deleniti enim!
+                </p>
+
+            </section>
+            <!-- ------------------------------ pre-ops ---------------------------------------- -->
+            <section class="sect  flex justify-center flex-col my-40 hidden-r items-center gap-10 max-[900px]:gap-16">
+
+                <h1 class="text-5xl max-[800px]:text-3xl  border-b-2 border-secondary">Pre Operation Instrucions
+                </h1>
+                <p class="text-lg max-[800px]:text-base w-4/5  text-center">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum at, sint iusto quae non quis
+                    laboriosam cum
+                </p>
+
+                <div class="grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+
+                    <% files.forEach(element => { %>
+                        <div class="rounded-md bg-secondary flex  items-center justify-center gap-4 text-lg p-4 px-6 ">
+                            <%= element.name %>
+                            <a href="<%= element.url %>" target="_blank">
+
+                                <button class="bg-accent  text-white py-2 px-6  rounded-md">Open
+                                    Procedures</button>
+                            </a>
+                        </div>
+                    <% }) %>
+
+                </div>
+
+            </section>
+
+            <!-- ------------------------------ contact ---------------------------------------- -->
+            <section class="sect  flex justify-center flex-col my-40 hidden-r  items-center gap-10 max-[900px]:gap-16">
+
+                <h1 class="text-5xl max-[800px]:text-3xl border-b-2   border-secondary">Contact</h1>
+                <div class="grid grid-cols-2 max-[1000px]:grid-cols-1 gap-16 w-full">
+
+                    <p class="text-lg max-[800px]:text-base   w-4/5">
+                        <span class="font-black">Phone :</span> 04394893493
+                    </p>
+                    <p class="text-lg max-[800px]:text-base   w-4/5">
+                        <span class="font-black">fax :</span> +04394893493
+                    </p>
+                    <p class="text-lg max-[800px]:text-base   w-4/5">
+                        <span class="font-black">Address :</span> kazipara, mirpur ohio
+                    </p>
+                    <p class="text-lg max-[800px]:text-base   w-4/5">
+                        <span class="font-black">map :</span> 04394893493
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- ------------------------------  map ---------------------------------------- -->
+            <section class="sect  flex justify-center flex-col my-40 hidden-r  items-center gap-10 max-[900px]:gap-16">
+
+                <h1 class="text-5xl max-[800px]:text-3xl border-b-2   border-secondary">Map Direction</h1>
+                <iframe class="w-full"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6211.554926402753!2d-77!3d38.883333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b833ac66506b%3A0x3b60521b76e78b6a!2sEastern%20Market!5e0!3m2!1sen!2sbd!4v1733343221843!5m2!1sen!2sbd"
+                    height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </section>
 
         </div>
 
-      </div>
-    </section>
-    <section class="insure">
-      <h1 class="mission-title">Insuarance Coverage</h1>
-      <h3 class="insure-title2">Nearly all major insurance plans acceptedNearly all major insurance plans accepted</h3>
-      <p class="mission-desc">
-        Our mission at <span style="font-weight: bold; background: transparent;">Hoque Medical Clinic</span> is to
-        provide the
-        highest quality endoscopic and ophthalmology surgical services to
-        improve the medical care of patients in our area. We provide
-        endoscopic procedures aaking these services available to
-        everyone.
-        <br>
-        <br>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis non provident, saepe tenetur qui illo, facere,
-        assumenda eius atque modi neque. Explicabo similique fugit facilis asperiores vero alias minima dolorum.
-      </p>
-      <div class="mission-btn-container">
-        <button class="reg-btn">Contact Us</button>
-      </div>
-    </section>
-    <section class="contact">
-      <form id="contact" action="/" method="post"  class="contact-form">
-        <h1 class="contact-form-title">CONTACT</h1>
-        <label class="label">
-          Name
-          <input name="name" type="text" class="contact-input-text" placeholder="Name" required/>
-        </label>
-        <label class="label">
-          Email
-          <input name="email" type="text" class=" contact-input-text" placeholder="Email" required/>
-        </label>
-        <label class="label">
-          Phone
-          <input name="phone" type="text" class=" contact-input-text" placeholder="Phone" required/>
-        </label>
-        <textarea name="bio" class="contact-textarea" placeholder="Bio" required ></textarea>
-        <button class="contact-btn reg-btn">Submit</button>
-        <p class="error"><%= error %></p>
-        <p class="succ"><%= msg %></p>
-      </form>
-      <div  class="contact-text">
-        <div class="contact-time">
-          <h1 class="contact-time-title">
-            HOURS OF OPERATION
-          </h1>
-          <h4 class="contact-times">
-            Monday-Friday: 8am to 5pm
-          </h4>
-          <h4 class="contact-times">
-            Saturday & Sunday: Closed
-          </h4>
-        </div>
-        <hr>
-        <div class="contact-address">
-          <h4 class="contact-addresses">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h4>
-          <h4 class="contact-addresses">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h4>
-          <h4 class="contact-addresses">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h4>
-          <h4 class="contact-addresses">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h4>
-        </div>
-      </div>
-    </section>
-    <section class="map">
-      <h1 class="insure-title map-title">Map Location</h1>
+    </main>
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1193851782978!2d90.35273127479392!3d23.81435338631915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c107a622c66b%3A0x845dff81d6bc83dc!2sRupnagar%20Abashik!5e0!3m2!1sen!2sus!4v1732732159195!5m2!1sen!2sus"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-  </main>
-  <footer>
-    © HOQUE MEDICAL CENTER
-  </footer>
-  <script>
-    const msg = "<%= msg %>"
-    const error = "<%= error %>"
-    const contactForm = document.querySelector("#contact")
-    const contactFormTop = contactForm.offsetTop
-    if(msg||error)
-  {
-    window.scrollTo({
-      top:contactFormTop
-    })
-  }
-  </script>
-  <script src="./script/script.js"></script>
+    <footer class=" flex justify-center items-center bg-primary my-0 py-6 blur-0 border-t-2 border-accent">
+        NAZMUL HOQUE MD
+    </footer>
+
+
+    <script src="script/script.js"></script>
+
 </body>
 
 </html>

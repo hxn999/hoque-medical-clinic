@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .sect{
+        @apply max-w-[1380px] m-auto px-8 my-4;
+    }
+}

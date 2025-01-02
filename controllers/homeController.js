@@ -1,10 +1,25 @@
 import { Contact } from "../models/contactModel.js"
+import Fille from "../models/fileModel.js"
 
-export function homeServer(req, res) {
+export async function homeServer(req, res) {
+try {
+
+    const files = await Fille.find({})
+
     res.render("index", {
         msg:"",
-        error:""
+        error:"",
+        files:files
     })
+} catch (error) {
+    
+    res.render("index", {
+        msg:"",
+        error:"",
+        files:[]
+    })
+}
+
 
 }
 
