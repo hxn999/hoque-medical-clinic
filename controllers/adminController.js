@@ -9,14 +9,17 @@ import { fileURLToPath } from 'node:url';
 
 export async function adminServer(req, res) {
     try {
-
+        let err=""
+        let succ=""
+        if(req.query.err) err=req.query.err
+        if(req.query.succ) succ=req.query.succ
         const files = await Fille.find({})
         res.render("admin", {
-            files
+            files,err,succ
         })
     } catch (error) {
         res.render("admin", {
-            files: []
+            files: [],err,succ
         })
     }
 }
@@ -66,16 +69,12 @@ export async function fileUpload(req, res) {
             url: fileUrl
         })
         await fileData.save()
-        res.render("admin", {
-            err: "File Uploaded Successfully!"
-        })
+        res.redirect("/admin?succ=File+Uploaded+Successfully!")
 
     } catch (error) {
         console.log(error.message);
 
-        res.render("admin", {
-            err: "File Upload Failed!"
-        })
+        res.redirect("/admin?err=File+Upload+Failed!")
     }
 
 }
@@ -106,12 +105,19 @@ export async function deleteFile(req, res) {
         }
 
         await Fille.findOneAndDelete({url:req.query.url})
-        res.redirect("/admin")
+        res.redirect("/admin?succ=File+deleted+Successfully!")
 
 
     } catch (error) {
-        res.redirect("/admin",{
-            err:"File Deletion failed!"
-        })
+        res.redirect("/admin?err=File+deletion+Failed!")
+    }
+}
+
+export async function logOut(req,res) {
+    try {
+        res.clearCookie("accessToken")
+        .redirect("/admin/login")
+    } catch (error) {
+        res.redirect("/admin")
     }
 }

@@ -1,5 +1,5 @@
 import express from 'express'
-import { adminServer, deleteFile, fileUpload, login,loginPage } from '../controllers/adminController.js'
+import { adminServer, deleteFile, fileUpload, login,loginPage, logOut } from '../controllers/adminController.js'
 import { authCheck } from '../middlewares/auth.js'
 import { publicAuthCheck } from '../middlewares/publicAuth.js'
 import { fileLoader } from 'ejs'
@@ -14,6 +14,7 @@ adminRouter.post("/login",login)
 adminRouter.get("/login",publicAuthCheck,loginPage)
 adminRouter.post("/file",authCheck,upload.single('file'),fileUpload)
 adminRouter.post("/delete",authCheck,deleteFile)
+adminRouter.post("/logout",authCheck,logOut)
 // adminRouter.get("/drug-list",drugForm)
 // adminRouter.get("/medications",mediForm)
 
