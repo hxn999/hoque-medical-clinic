@@ -8,20 +8,18 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export async function adminServer(req, res) {
-    try {
-        let err = ""
+     let err = ""
         let succ = ""
         if (req.query.err) err = req.query.err
         if (req.query.succ) succ = req.query.succ
+    try {
+        
         const files = await Fille.find({})
         res.render("admin", {
             files, err, succ
         })
     } catch (error) {
-        let err = ""
-        let succ = ""
-        if (req.query.err) err = req.query.err
-        if (req.query.succ) succ = req.query.succ
+       
         res.render("admin", {
             files: [], err, succ
         })
