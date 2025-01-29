@@ -9,17 +9,21 @@ import { fileURLToPath } from 'node:url';
 
 export async function adminServer(req, res) {
     try {
-        let err=""
-        let succ=""
-        if(req.query.err) err=req.query.err
-        if(req.query.succ) succ=req.query.succ
+        let err = ""
+        let succ = ""
+        if (req.query.err) err = req.query.err
+        if (req.query.succ) succ = req.query.succ
         const files = await Fille.find({})
         res.render("admin", {
-            files,err,succ
+            files, err, succ
         })
     } catch (error) {
+        let err = ""
+        let succ = ""
+        if (req.query.err) err = req.query.err
+        if (req.query.succ) succ = req.query.succ
         res.render("admin", {
-            files: [],err,succ
+            files: [], err, succ
         })
     }
 }
@@ -83,9 +87,9 @@ export async function deleteFile(req, res) {
     try {
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = dirname(__filename);
-        const filePath = join(__dirname,"..", "public", req.query.url.slice(1))
+        const filePath = join(__dirname, "..", "public", req.query.url.slice(1))
         console.log(filePath);
-        
+
 
         try {
             // Check if file exists
@@ -104,7 +108,7 @@ export async function deleteFile(req, res) {
             }
         }
 
-        await Fille.findOneAndDelete({url:req.query.url})
+        await Fille.findOneAndDelete({ url: req.query.url })
         res.redirect("/admin?succ=File+deleted+Successfully!")
 
 
@@ -113,10 +117,10 @@ export async function deleteFile(req, res) {
     }
 }
 
-export async function logOut(req,res) {
+export async function logOut(req, res) {
     try {
         res.clearCookie("accessToken")
-        .redirect("/admin/login")
+            .redirect("/admin/login")
     } catch (error) {
         res.redirect("/admin")
     }
