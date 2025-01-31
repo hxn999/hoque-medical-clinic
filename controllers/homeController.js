@@ -22,6 +22,27 @@ try {
 
 
 }
+export async function preOps(req, res) {
+try {
+
+    const files = await Fille.find({})
+
+    res.render("pre-op", {
+        msg:"",
+        error:"",
+        files:files
+    })
+} catch (error) {
+    
+    res.render("pre-op", {
+        msg:"",
+        error:"",
+        files:[]
+    })
+}
+
+
+}
 
 export async function contactForm(req, res) {
     try {

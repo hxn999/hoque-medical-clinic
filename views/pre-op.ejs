@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+    </style>
+    <link href="css/anim.css" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <title>Hoque Medical | Admin Login</title>
+</head>
+
+<body class="font-classic flex flex-col h-[100vh]">
+
+    <header class="sticky top-0 py-4 z-20 bg-primary ">
+        <!-- ---------------- navbar ------------------------- -->
+
+        <nav class="max-w-[1380px] m-auto px-8  flex items-center  justify-between  max-[900px]:justify-around sticky top-0">
+            <a href="/">
+
+                <div class="flex items-center justify-center gap-2">
+                    <img src="/assets/logo.png" alt="" class="w-14">
+                    <div class="flex flex-col items-start justify-center">
+                        <h1 class="font-black text-3xl ">Hoque</h1>
+                        <span class="text-sm text-slate-600">Medical Clinic</span>
+                    </div>
+                </div>
+            </a>
+
+            
+            <a href="/">
+
+                <button class="p-2 px-4 bg-secondary rounded-md flex items-center gap-3 ">
+                   <span class="max-[900px]:hidden"> Back to Homepage </span><svg class="w-5" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+            </button>
+        </a>
+        </nav>
+    </header>
+
+    <main class="flex-1 ">
+
+        <section  class="sect  flex justify-center flex-col my-10  items-center gap-10 max-[900px]:gap-16">
+
+            <h1 class="text-5xl max-[800px]:text-2xl  border-b-2 border-secondary ">General Instructions
+            </h1>
+            <p id="contact" class="text-lg max-[800px]:text-base w-4/5  text-center">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum at, sint iusto quae non quis
+                laboriosam cum
+            </p>
+            
+           
+            <div class="grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+                
+                <% files.forEach(element=> { %>
+                    <div class="rounded-md bg-primary flex  items-center justify-between gap-4 text-lg py-2 px-6 max-[800px]:text-sm max-[800px]:px-4">
+                        <svg class="w-4" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                    <path
+                        d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                </svg>
+                        <%= element.name %>
+                            <a href="<%= element.url %>" target="_blank">
+
+                                <button
+                                    class="bg-secondary border-2 text-sm border-slate-500 text-white py-2 px-4  rounded-md">Open
+                                    File</button>
+                            </a>
+                    </div>
+                    <% }) %>
+
+            </div>
+
+        </section>
+
+    </main>
+<footer class=" flex justify-center items-center bg-primary my-0 py-6 blur-0 border-t-2 border-accent">
+        NAZMUL HOQUE MD
+    </footer>   
+    
+</body>
+
+</html>
