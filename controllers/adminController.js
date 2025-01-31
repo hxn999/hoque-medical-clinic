@@ -6,6 +6,7 @@ import { access, unlink } from 'node:fs/promises';
 import { constants } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import Auth from "../models/authModel.js";
 
 export async function adminServer(req, res) {
      let err = ""
@@ -31,7 +32,10 @@ export async function login(req, res) {
 
 
     try {
-        if ((req.body.username.trim() === process.env.USERNAME) && (req.body.pass === process.env.PASS)) {
+
+        let credential = await Auth.findOne({_id:"679c8e205decebe5b7c631b6"})
+        console.log(credential)
+        if ((req.body.username.trim() === credential.username) && (req.body.pass === credential.password)) {
             console.log("hi");
             const accessToken = jwt.sign({ name: "admin", status: "authenticated" }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30d' })
             res
@@ -114,6 +118,47 @@ export async function deleteFile(req, res) {
         res.redirect("/admin?err=File+deletion+Failed!")
     }
 }
+
+export async function passChange(req,res) {
+
+    try {
+        
+       let credential = await Auth.findOne({_id:"679c8e205decebe5b7c631b6"})
+
+       if(credential.password != req.body.pass) {
+        throw Error("Wrong Password")
+       }
+
+       await Auth.updateOne({_id:"679c8e205decebe5b7c631b6"},{password:req.body.newPass})
+
+       res.redirect("/admin?succ=Password+Changed+Successfully!")
+
+
+    } catch (error) {
+        res.redirect("/admin?err=Password+Change+Failed!")
+    }
+
+
+}
+
+export async function usernameChange(req,res) {
+
+    try {
+        
+ 
+
+       await Auth.updateOne({_id:"679c8e205decebe5b7c631b6"},{username:req.body.newUsername})
+
+       res.redirect("/admin?succ=Username+Changed+Successfully!")
+
+
+    } catch (error) {
+        res.redirect("/admin?err=Username+Change+Failed!")
+    }
+
+
+}
+
 
 export async function logOut(req, res) {
     try {
