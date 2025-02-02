@@ -15,6 +15,9 @@ const fileSchema  = new Schema(
     }
 )
 
+
+
 const Fille = model("File",fileSchema)
+
 
 export default Fille

@@ -7,7 +7,7 @@ import { constants } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Auth from "../models/authModel.js";
-
+import Procedure from "../models/procedureModel.js";
 export async function adminServer(req, res) {
      let err = ""
         let succ = ""
@@ -159,6 +159,33 @@ export async function usernameChange(req,res) {
 
 }
 
+
+export async function procedureUpload(req,res)
+{
+    try {
+        const updateFields = {}; // Object to store only the fields that need to be updated
+    
+        // Check if fields exist and are not null, then add to updateFields
+        if (req.body.link1) updateFields.info1 = req.body.link1;
+        if (req.body.link2) updateFields.info2 = req.body.link2;
+        if (req.files["file1"]) updateFields.form1 = "/file/" + req.files["file1"][0].filename;
+        if (req.files["file2"]) updateFields.form2 = "/file/" + req.files["file2"][0].filename;
+    
+        // Update the document only if there's at least one field to update
+        if (Object.keys(updateFields).length > 0) {
+            await Procedure.updateOne(
+                { _id: "679f3f03e06fc39979e55ebf" },
+                { $set: updateFields }
+            );
+        }
+    
+        res.redirect("/admin?succ=File+Uploaded+Successfully!");
+    } catch (error) {
+        console.log(error.message);
+        res.redirect("/admin?err=File+Upload+Failed!");
+    }
+    
+}
 
 export async function logOut(req, res) {
     try {

@@ -30,11 +30,17 @@ let upload = multer({
         fileSize: 1000000000,
     },
     fileFilter:function (req,file,cb){
+        const allowedFields = ['file1', 'file2']; // Allowed field names
+
+        if (allowedFields.includes(file.fieldname)) {
+            cb(null, true);
+        } 
         if(file.fieldname=="file")
         {
 
             cb(null,true)
         }
+       
     }
 })
 export default upload

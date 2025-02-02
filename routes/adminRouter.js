@@ -1,5 +1,5 @@
 import express from 'express'
-import { adminServer, deleteFile, fileUpload, login,loginPage, logOut, passChange, usernameChange } from '../controllers/adminController.js'
+import { adminServer, deleteFile, fileUpload, login,loginPage, logOut, passChange, procedureUpload, usernameChange } from '../controllers/adminController.js'
 import { authCheck } from '../middlewares/auth.js'
 import { publicAuthCheck } from '../middlewares/publicAuth.js'
 import { fileLoader } from 'ejs'
@@ -13,6 +13,10 @@ adminRouter.get("/",authCheck,adminServer)
 adminRouter.post("/login",login)
 adminRouter.get("/login",publicAuthCheck,loginPage)
 adminRouter.post("/file",authCheck,upload.single('file'),fileUpload)
+adminRouter.post("/file/procedure",authCheck,upload.fields([
+    { name: 'file1', maxCount: 1 },
+    { name: 'file2', maxCount: 1 }
+  ]),procedureUpload)
 adminRouter.post("/delete",authCheck,deleteFile)
 adminRouter.post("/pass",authCheck,passChange)
 adminRouter.post("/username",authCheck,usernameChange)
