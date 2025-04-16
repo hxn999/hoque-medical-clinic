@@ -68,10 +68,12 @@ export async function loginPage(req, res) {
 export async function fileUpload(req, res) {
     try {
         console.log(req.file);
+        console.log("jdfsdf")
         console.log(req.body);
         const fileUrl = "/file/" + req.file.filename;
         const fileData = new Fille({
             name: req.body.name,
+            type:req.body.type,
             url: fileUrl
         })
         await fileData.save()

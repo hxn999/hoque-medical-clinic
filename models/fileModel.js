@@ -7,6 +7,11 @@ const fileSchema  = new Schema(
             required:true,
             trim:true
         },
+        type:{
+            type:String,
+            default:"preop"
+        }
+        ,
        url:{
         type:String,
         required:true,

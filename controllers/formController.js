@@ -1,4 +1,4 @@
-import { Registration } from "../models/contactModel.js"
+
 
 export function regForm(req, res) {
     res.render("reg-form")

@@ -14,8 +14,8 @@ adminRouter.post("/login",login)
 adminRouter.get("/login",publicAuthCheck,loginPage)
 adminRouter.post("/file",authCheck,upload.single('file'),fileUpload)
 adminRouter.post("/file/procedure",authCheck,upload.fields([
-    { name: 'file1', maxCount: 1 },
-    { name: 'file2', maxCount: 1 }
+    { name: 'file1', maxCount: 50 },
+    { name: 'file2', maxCount: 50 }
   ]),procedureUpload)
 adminRouter.post("/delete",authCheck,deleteFile)
 adminRouter.post("/pass",authCheck,passChange)

@@ -60,179 +60,212 @@
                         <%= succ %>
                     </h3>
                     <% } %>
-        <h1 class="text-center pt-8 text-xl text-bold">Procedure Forms</h1>
-        <form class="w-full sect flex gap-10 items-center justify-center flex-col" method="post"
-            action="/admin/file/procedure" enctype="multipart/form-data">
-            <div class="flex flex-col gap-4">
+                    
+                        <h1 class="text-center pt-8 text-xl text-bold">Upload Colonoscopy Forms</h1>
 
-                <h2 class="text-xl font-medium">Colonoscopy</h2>
-                <input placeholder="More Information Link"
-                    class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
-                    type="text" name="link1" id="">
-                <input type="file" class="max-[900px]:w-4/5" name="file1" id="">
-            </div>
-            <div class="flex flex-col gap-4">
 
-                <h2 class="text-xl font-medium">Upper Endoscopy</h2>
-                <input placeholder="More Information Link"
-                    class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
-                    type="text" name="link2" id="">
-                <input type="file" class="max-[900px]:w-4/5" name="file2" id="">
-            </div>
+                        <form class="w-full sect flex gap-10 items-center justify-center max-[900px]:flex-col"
+                            method="post" action="/admin/file" enctype="multipart/form-data">
+                            <input placeholder="File Name"
+                                class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                type="text" name="name" id="">
+                            <input type="file" class="max-[900px]:w-4/5" name="file" id="">
+                            <input class="hidden" type="text" name="type" value="colon" id="">
+                            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
+                                type="submit">Upload</button>
+                        </form>
 
-            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
-                type="submit">Upload</button>
-        </form>
 
-        <h1 class="text-center pt-8 text-xl text-bold">Upload Forms</h1>
-        <form class="w-full sect flex gap-10 items-center justify-center max-[900px]:flex-col" method="post"
-            action="/admin/file" enctype="multipart/form-data">
-            <input placeholder="File Name"
-                class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
-                type="text" name="name" id="">
-            <input type="file" class="max-[900px]:w-4/5" name="file" id="">
+                        <h1 class="text-center pt-8 text-xl text-bold">Upload Upper Endoscopy Forms</h1>
+                        <form class="w-full sect flex gap-10 items-center justify-center max-[900px]:flex-col"
+                            method="post" action="/admin/file" enctype="multipart/form-data">
+                            <input placeholder="File Name"
+                                class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                type="text" name="name" id="">
+                                <input class="hidden" type="text" name="type" value="endo" id="">
+                            <input type="file" class="max-[900px]:w-4/5" name="file" id="">
 
-            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
-                type="submit">Upload</button>
-        </form>
+                            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
+                                type="submit">Upload</button>
+                        </form>
+                        <form class="w-full sect flex gap-10 items-center justify-center flex-col" method="post"
+                            action="/admin/file/procedure" enctype="multipart/form-data">
+                            <div class="flex flex-col gap-4">
 
-        <h1 class="text-center pt-8 text-xl text-bold">Uploaded Forms</h1>
-        <div class="sect grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+                                <h2 class="text-xl font-medium">Colonoscopy Link</h2>
+                                <input placeholder="More Information Link"
+                                    class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                    type="text" name="link1" id="">
 
-            <% files.forEach(element=> { %>
-                <div
-                    class="rounded-md bg-primary flex  items-center max-[900px]:text-base gap-4 text-lg py-2 px-6 justify-between">
-                    <%= element.name %>
-                        <div class="flex items-center gap-3 justify-center">
+                            </div>
+                            <div class="flex flex-col gap-4">
 
-                            <a href="<%= element.url %>" target="_blank">
+                                <h2 class="text-xl font-medium">Upper Endoscopy Link</h2>
+                                <input placeholder="More Information Link"
+                                    class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                    type="text" name="link2" id="">
 
-                                <button
-                                    class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
-                                    File</button>
-                            </a>
-                            <form method="post" action="/admin/delete?url=<%= element.url %>">
+                            </div>
 
-                                <button type="submit" id="<%= element.url %>"
-                                    class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
-                                    File</button>
-                            </form>
+                            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
+                                type="submit">Upload</button>
+                        </form>
+
+                        <h1 class="text-center pt-8 text-xl text-bold">Upload Forms</h1>
+                        <form class="w-full sect flex gap-10 items-center justify-center max-[900px]:flex-col"
+                            method="post" action="/admin/file" enctype="multipart/form-data">
+                            <input placeholder="File Name"
+                                class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                type="text" name="name" id="">
+                            <input type="file" class="max-[900px]:w-4/5" name="file" id="">
+
+                            <button class="p-2 px-4 bg-secondary text-white rounded-md flex items-center gap-3"
+                                type="submit">Upload</button>
+                        </form>
+
+                        <h1 class="text-center pt-8 text-xl text-bold">Uploaded Forms</h1>
+                        <div class="sect grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+
+                            <% files.forEach(element=> { %>
+                                <div
+                                    class="rounded-md bg-primary flex  items-center max-[900px]:text-base gap-4 text-lg py-2 px-6 justify-between">
+                                    <%= element.name %>
+                                        <div class="flex items-center gap-3 justify-center">
+
+                                            <a href="<%= element.url %>" target="_blank">
+
+                                                <button
+                                                    class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
+                                                    File</button>
+                                            </a>
+                                            <form method="post" action="/admin/delete?url=<%= element.url %>">
+
+                                                <button type="submit" id="<%= element.url %>"
+                                                    class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
+                                                    File</button>
+                                            </form>
+                                        </div>
+                                </div>
+                                <% }) %>
+
                         </div>
-                </div>
-                <% }) %>
 
-        </div>
+                        <div class="sect flex flex-row gap-8">
 
-        <div class="sect flex flex-row gap-8">
+                            <button id="openModal" class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
+                                Change Password
+                            </button>
+                            <!-- Open Modal Button -->
+                            <button id="openModal1" class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
+                                Change Username
+                            </button>
+                        </div>
 
-            <button id="openModal" class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
-                Change Password
-            </button>
-            <!-- Open Modal Button -->
-            <button id="openModal1" class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
-                Change Username
-            </button>
-        </div>
+                        <!-- Modal Background -->
+                        <div id="modal"
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                            <!-- Modal Content -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                                <h2 class="text-xl font-bold mb-4 text-center">Change Password</h2>
 
-        <!-- Modal Background -->
-        <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <!-- Modal Content -->
-            <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-                <h2 class="text-xl font-bold mb-4 text-center">Change Password</h2>
+                                <form class="flex flex-col items-center justify-center gap-8 " method="post"
+                                    action="/admin/pass">
 
-                <form class="flex flex-col items-center justify-center gap-8 " method="post" action="/admin/pass">
+                                    <div class="flex relative">
 
-                    <div class="flex relative">
+                                        <input id="pass"
+                                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
+                                            placeholder="Old Password" type="text" name="pass">
 
-                        <input id="pass"
-                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
-                            placeholder="Old Password" type="text" name="pass">
+                                    </div>
+                                    <div class="flex relative">
 
-                    </div>
-                    <div class="flex relative">
+                                        <input id="newPass"
+                                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
+                                            placeholder="New Password" type="text" name="newPass">
 
-                        <input id="newPass"
-                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
-                            placeholder="New Password" type="text" name="newPass">
+                                    </div>
+                                    <div class="flex relative">
 
-                    </div>
-                    <div class="flex relative">
+                                        <input id="newPass1"
+                                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
+                                            placeholder="Retype New Password" type="text" name="newPass1">
 
-                        <input id="newPass1"
-                            class="bg-primary text-black p-2 px-4 text-lg rounded-md border-secondary focus::border-2 border"
-                            placeholder="Retype New Password" type="text" name="newPass1">
+                                    </div>
+                                    <button id="passChangeBtn"
+                                        class="p-2 px-4 bg-secondary rounded-md  gap-3 w-full  text-center text-white"
+                                        type="submit" disabled>Change</button>
 
-                    </div>
-                    <button id="passChangeBtn"
-                        class="p-2 px-4 bg-secondary rounded-md  gap-3 w-full  text-center text-white" type="submit"
-                        disabled>Change</button>
+                                    <p id="passChangeText" class="text-red-500 mb-4">
+                                        <%= err %>
+                                    </p>
+                                </form>
+                                <div class="w-full flex justify-end">
+                                    <button id="closeModal"
+                                        class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Background -->
+                        <div id="modal1"
+                            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                            <!-- Modal Content -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                                <h2 class="text-xl font-bold mb-4 text-center">Change Password</h2>
 
-                    <p id="passChangeText" class="text-red-500 mb-4">
-                        <%= err %>
-                    </p>
-                </form>
-                <div class="w-full flex justify-end">
-                    <button id="closeModal" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Background -->
-        <div id="modal1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <!-- Modal Content -->
-            <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-                <h2 class="text-xl font-bold mb-4 text-center">Change Password</h2>
+                                <form class="flex flex-col items-center justify-center gap-8 " method="post"
+                                    action="/admin/username">
+                                    <input
+                                        class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
+                                        type="text" placeholder="New Username" name="newUsername">
 
-                <form class="flex flex-col items-center justify-center gap-8 " method="post" action="/admin/username">
-                    <input
-                        class="bg-primary text-black p-2 px-4 text-lg  rounded-md border-secondary focus::border-2 border"
-                        type="text" placeholder="New Username" name="newUsername">
-
-                    <button class="p-2 px-4 bg-secondary rounded-md  gap-3 w-full mb-4   text-white"
-                        type="submit">Change Username</button>
+                                    <button class="p-2 px-4 bg-secondary rounded-md  gap-3 w-full mb-4   text-white"
+                                        type="submit">Change Username</button>
 
 
-                </form>
-                <div class="w-full flex justify-end">
-                    <button id="closeModal1" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
+                                </form>
+                                <div class="w-full flex justify-end">
+                                    <button id="closeModal1"
+                                        class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-        <script>
-            const modal = document.getElementById('modal');
-            const openModal = document.getElementById('openModal');
-            const closeModal = document.getElementById('closeModal');
+                        <script>
+                            const modal = document.getElementById('modal');
+                            const openModal = document.getElementById('openModal');
+                            const closeModal = document.getElementById('closeModal');
 
-            openModal.addEventListener('click', () => {
-                modal.classList.remove('hidden');
-            });
+                            openModal.addEventListener('click', () => {
+                                modal.classList.remove('hidden');
+                            });
 
-            closeModal.addEventListener('click', () => {
-                modal.classList.add('hidden');
-            });
+                            closeModal.addEventListener('click', () => {
+                                modal.classList.add('hidden');
+                            });
 
-            const modal1 = document.getElementById('modal1');
-            const openModal1 = document.getElementById('openModal1');
-            const closeModal1 = document.getElementById('closeModal1');
+                            const modal1 = document.getElementById('modal1');
+                            const openModal1 = document.getElementById('openModal1');
+                            const closeModal1 = document.getElementById('closeModal1');
 
-            openModal1.addEventListener('click', () => {
-                modal1.classList.remove('hidden');
-            });
+                            openModal1.addEventListener('click', () => {
+                                modal1.classList.remove('hidden');
+                            });
 
-            closeModal1.addEventListener('click', () => {
-                modal1.classList.add('hidden');
-            });
-        </script>
+                            closeModal1.addEventListener('click', () => {
+                                modal1.classList.add('hidden');
+                            });
+                        </script>
 
-        <form method="post" class="text-center py-10" action="/admin/logout">
-            <button type="submit"
-                class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Log
-                Out</button>
-        </form>
+                        <form method="post" class="text-center py-10" action="/admin/logout">
+                            <button type="submit"
+                                class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Log
+                                Out</button>
+                        </form>
     </main>
 
     <script>
