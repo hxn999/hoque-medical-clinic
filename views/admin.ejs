@@ -124,28 +124,90 @@
                         </form>
 
                         <h1 class="text-center pt-8 text-xl text-bold">Uploaded Forms</h1>
+                        <h1 class="text-center pt-8 text-xl text-bold">Colonoscopy Forms</h1>
                         <div class="sect grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
 
                             <% files.forEach(element=> { %>
-                                <div
+                                <% if (element.type=="preop") { %>
+                                 
+                                    <div
                                     class="rounded-md bg-primary flex  items-center max-[900px]:text-base gap-4 text-lg py-2 px-6 justify-between">
                                     <%= element.name %>
-                                        <div class="flex items-center gap-3 justify-center">
-
-                                            <a href="<%= element.url %>" target="_blank">
-
-                                                <button
-                                                    class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
-                                                    File</button>
-                                            </a>
-                                            <form method="post" action="/admin/delete?url=<%= element.url %>">
-
-                                                <button type="submit" id="<%= element.url %>"
-                                                    class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
-                                                    File</button>
+                                    <div class="flex items-center gap-3 justify-center">
+                                        
+                                        <a href="<%= element.url %>" target="_blank">
+                                            
+                                            <button
+                                            class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
+                                            File</button>
+                                        </a>
+                                        <form method="post" action="/admin/delete?url=<%= element.url %>">
+                                            
+                                            <button type="submit" id="<%= element.url %>"
+                                                class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
+                                                File</button>
                                             </form>
                                         </div>
-                                </div>
+                                    </div>
+                                    <% } %>
+                                <% }) %>
+
+                        </div>
+                        <h1 class="text-center pt-8 text-xl text-bold">Upper Endoscopy Forms</h1>
+                        <div class="sect grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+
+                            <% files.forEach(element=> { %>
+                                <% if (element.type=="endo") { %>
+                                 
+                                    <div
+                                    class="rounded-md bg-primary flex  items-center max-[900px]:text-base gap-4 text-lg py-2 px-6 justify-between">
+                                    <%= element.name %>
+                                    <div class="flex items-center gap-3 justify-center">
+                                        
+                                        <a href="<%= element.url %>" target="_blank">
+                                            
+                                            <button
+                                            class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
+                                            File</button>
+                                        </a>
+                                        <form method="post" action="/admin/delete?url=<%= element.url %>">
+                                            
+                                            <button type="submit" id="<%= element.url %>"
+                                                class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
+                                                File</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                <% }) %>
+
+                        </div>
+                        <h1 class="text-center pt-8 text-xl text-bold">Procedure Forms</h1>
+                        <div class="sect grid grid-cols-2 gap-24 max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+
+                            <% files.forEach(element=> { %>
+                                <% if (element.type=="preop") { %>
+                                 
+                                    <div
+                                    class="rounded-md bg-primary flex  items-center max-[900px]:text-base gap-4 text-lg py-2 px-6 justify-between">
+                                    <%= element.name %>
+                                    <div class="flex items-center gap-3 justify-center">
+                                        
+                                        <a href="<%= element.url %>" target="_blank">
+                                            
+                                            <button
+                                            class="bg-secondary border-2 border-slate-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3 ">Open
+                                            File</button>
+                                        </a>
+                                        <form method="post" action="/admin/delete?url=<%= element.url %>">
+                                            
+                                            <button type="submit" id="<%= element.url %>"
+                                                class="bg-red-500 text-white py-2 px-6  rounded-md max-[900px]:text-sm max-[900px]:px-3">Delete
+                                                File</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% } %>
                                 <% }) %>
 
                         </div>
